@@ -2,6 +2,7 @@
 title: hexo写文章
 date: 2019-01-02 17:33:21
 tags: hexo
+categories: 博客
 comments: true
 description: 对于刚刚搭建好hexo的博客的小伙伴，不知道怎么写博客的的问题；
 ---

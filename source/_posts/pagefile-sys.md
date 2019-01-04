@@ -1,6 +1,7 @@
 ---
 title: pagefile.sys
 tags: windows system
+categories: 系统
 description: 为了腾出更多空间给C盘，把虚拟内存从C盘移到到D盘，很多人不会弄，下面我叫大家如何弄。虚拟内存的移动和替换。也就是pagefile.sys的删除替换
 date: 2019-01-03 17:05:47
 ---

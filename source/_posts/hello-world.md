@@ -1,6 +1,7 @@
 ---
 title: Hello Hexo
 tags: 随笔
+categories: 其他
 description: 刚刚搭建好的博客网站，生成的第一篇博客...
 ---
 
