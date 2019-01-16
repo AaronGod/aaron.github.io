@@ -129,7 +129,34 @@ description: 在使用swiper中看到使用的flex布局，突然想全面整理
 
 * 二列的实现方法:如果是左边带有侧栏的二栏布局，则去掉右侧栏，不要设置主面板的margin-right值，其他操作相同。反之亦然。
 
-2. position+margin
+2. **position+margin**。 通过绝对定位将两个侧栏固定，同样通过外边距给两个侧栏腾出空间，中间列自适应。
+```
+<!-- 1.对两边侧栏分别设置宽度，设置定位方式为绝对定位。
+
+2. 设置两侧栏的top值都为0，设置左侧栏的left值为0， 右侧栏的right值为0。
+
+3. 对主面板设置左右外边距，margin-left的值为左侧栏的宽度，margin-right的值为右侧栏的宽度。 -->
+
+<div class="sub">left</div>
+<div class="main">main</div>
+<div class="extra">right</div>
+
+.sub, .extra {
+    position: absolute;
+    top: 0; 
+    width: 200px;
+}
+.sub { 
+    left: 0;
+}
+.extra { 
+    right: 0; 
+}
+.main { 
+    margin: 0 200px;
+}
+
+```
 
 
 
