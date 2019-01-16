@@ -95,6 +95,30 @@ default_layout: post
 default_layout: draft
 ```
 
+
+**问题**
+1. hexo 无法备份 theme 主题目录
+
+参考解决办法： https://hoxis.github.io/hexo-backup-theme-dir.html
+```
+$ git rm --cached themes\主题名称\
+rm 'themes/主题名称'
+
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    themes/主题名称
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        themes/主题名称/
+```
+
 转载：https://www.jianshu.com/p/265b2c653e6f
 
 
