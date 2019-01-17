@@ -9,7 +9,7 @@ description: 对于刚刚搭建好hexo的博客的小伙伴，不知道怎么写
 
 
 文章目标人群：刚刚利用各路教程终于搭建好了Hexo，准备写下第一篇文章的同学们。
-我的基本情况：Hexo + GitHub Pages搭建的博客，nexT主题，Mac OS。
+我的基本情况：Hexo + GitHub Pages搭建的博客，nexT主题，windows。
 [markdown文档参考](https://www.appinn.com/markdown/index.html)
 
 ## Step 0: 基本了解 + 准备工作

@@ -17,7 +17,6 @@ description: 在使用swiper中看到使用的flex布局，突然想全面整理
 2. 多列布局
 3. flex布局
 4. grid布局
-
 ### 传统布局
 
 #### 居中布局
@@ -55,14 +54,12 @@ description: 在使用swiper中看到使用的flex布局，突然想全面整理
   <div id="content">内容</div>
   <div id="footer">尾部</div>
 </div>
-
 <!-- css部分 -->
 .layout{
   /*   width: 960px; *//*设置width当浏览器窗口宽度小于960px时，单列布局不会自适应。*/
     max-width: 960px;
     margin: 0 auto;
 }
-
 ```
 
 * 对于第二种，header、footer的内容宽度为100%，但header、footer的内容区以及content统一设置max-width，并通过margin:auto实现居中。
@@ -77,7 +74,6 @@ description: 在使用swiper中看到使用的flex布局，突然想全面整理
 <div id="footer">
     <div class="layout">尾部</div>
 </div>
-
 <!-- css 部分 -->
 #header,#footer {
     width:100%;
@@ -104,12 +100,8 @@ description: 在使用swiper中看到使用的flex布局，突然想全面整理
     <div class="extra">extra</div>
     <div class="main">main</div>
 </div>
-
-
 <!-- 对两边侧栏分别设置宽度，并对左侧栏添加左浮动，对右侧栏添加有浮动。
-
 对主面板设置左右外边距，margin-left的值为左侧栏的宽度，margin-right的值为右侧栏的宽度。 -->
-
 .sub{
     width: 100px;
     float: left;
@@ -128,22 +120,17 @@ description: 在使用swiper中看到使用的flex布局，突然想全面整理
 1.注意DOM文档的书写顺序，先写两侧栏，再写主面板，更换后则侧栏会被挤到下一列（圣杯布局和双飞翼布局都会用到）
 2.这种布局方式比较简单明了，但缺点是渲染时先渲染了侧边栏，而不是比较重要的主面板。
 
-
 * 二列的实现方法:如果是左边带有侧栏的二栏布局，则去掉右侧栏，不要设置主面板的margin-right值，其他操作相同。反之亦然。
 
 2. **position+margin**。 通过绝对定位将两个侧栏固定，同样通过外边距给两个侧栏腾出空间，中间列自适应。
 
 ```
 <!-- 1.对两边侧栏分别设置宽度，设置定位方式为绝对定位。
-
 2. 设置两侧栏的top值都为0，设置左侧栏的left值为0， 右侧栏的right值为0。
-
 3. 对主面板设置左右外边距，margin-left的值为左侧栏的宽度，margin-right的值为右侧栏的宽度。 -->
-
 <div class="sub">left</div>
 <div class="main">main</div>
 <div class="extra">right</div>
-
 .sub, .extra {
     position: absolute;
     top: 0; 
@@ -158,7 +145,6 @@ description: 在使用swiper中看到使用的flex布局，突然想全面整理
 .main { 
     margin: 0 200px;
 }
-
 ```
 
 >`note:`
@@ -171,6 +157,105 @@ description: 在使用swiper中看到使用的flex布局，突然想全面整理
 原理说明：
 主面板设置宽度为100%，主面板与两个侧栏都设置浮动，常见为左浮动，这时两个侧栏会被主面板挤下去。通过负边距将浮动的侧栏拉上来，左侧栏的负边距为100%，刚好是窗口的宽度，因此会从主面板下面的左边跑到与主面板对齐的左边，右侧栏此时浮动在主面板下面的左边，设置负边距为负的自身宽度刚好浮动到主面板对齐的右边。为了避免侧栏遮挡主面板内容，在外层设置左右padding值为左右侧栏的宽度，给侧栏腾出空间，此时主面板的宽度减小。由于侧栏的负margin都是相对主面板的，两个侧栏并不会像我们理想中的停靠在左右两边，而是跟着缩小的主面板一起向中间靠拢。此时使用相对布局，调整两个侧栏到相应的位置。
 
+```
+<div id="bd">         
+    <div class="main"></div>        
+    <div class="sub"></div>        
+    <div class="extra"></div>  
+</div> 
 
+    布局步骤:
+
+    三者都设置向左浮动。
+
+    设置main宽度为100%，设置两侧栏的宽度。
+
+    设置 负边距，sub设置负左边距为100%，extra设置负左边距为负的自身宽度。
+
+    设置main的padding值给左右两个子面板留出空间。
+
+    设置两个子面板为相对定位，sub的left值为负的sub宽度，extra的right值为负的extra宽度。
+
+.main {        
+    float: left;       
+    width: 100%;   
+ }  
+ .sub {       
+    float: left;        
+    width: 190px;        
+    margin-left: -100%;               
+    position: relative;  
+    left: -190px;  
+}   
+.extra {        
+    float: left;        
+    width: 230px;        
+    margin-left: -230px; 
+    position: relative; 
+    right: -230px;  
+ }
+#bd {        
+    padding: 0 230px 0 190px;   
+ }
+
+
+```
+
+> NOTE: 
+1.DOM元素的书写顺序不得更改。
+2.当面板的main内容部分比两边的子面板宽度小的时候，布局就会乱掉。可以通过设置main的min-width属性或使用双飞翼布局避免问题。
+3.二列的实现方法.如果是左边带有侧栏的二栏布局，则去掉右侧栏，不要设置主面板的padding-right值，其他操作相同。反之亦然。
+
+4. **双飞翼布局(float + 负margin + margin)**。
+
+>原理说明：
+双飞翼布局和圣杯布局的思想有些相似，都利用了浮动和负边距，但双飞翼布局在圣杯布局上做了改进，在main元素上加了一层div, 并设置margin,由于两侧栏的负边距都是相对于main-wrap而言，main的margin值变化便不会影响两个侧栏，因此省掉了对两侧栏设置相对布局的步骤。
+
+```
+<div id="main-wrap" class="column">
+      <div id="main">#main</div>
+</div>
+<div class="sub"></div>        
+<div class="extra"></div>
+
+
+布局步骤:
+1. 三者都设置向左浮动。
+2. 设置main-wrap宽度为100%，设置两个侧栏的宽度。
+3. 设置负边距，sub设置负左边距为100%，extra设置负左边距为负的自身宽度。
+4. 设置main的margin值给左右两个子面板留出空间。
+
+.main-wrap {        
+    float: left;       
+    width: 100%;   
+ }  
+ .sub {       
+    float: left;        
+    width: 190px;        
+    margin-left: -100%;   
+}   
+.extra {        
+    float: left;        
+    width: 230px;        
+    margin-left: -230px; 
+ }
+.main {    
+    margin: 0 230px 0 190px;
+}
+```
+
+> NOTE
+1.圣杯采用的是padding，而双飞翼采用的margin，解决了圣杯布局main的最小宽度不能小于左侧栏的缺点。
+2.双飞翼布局不用设置相对布局，以及对应的left和right值。
+3.通过引入相对布局，可以实现三栏布局的各种组合，例如对右侧栏设置position: relative; left: 190px; ,可以实现sub+extra+main的布局。
+4.二列实现方法。如果是左边带有侧栏的二栏布局，则去掉右侧栏，不要设置main-wrap的margin-right值，其他操作相同。反之亦然。
+
+5. **flex布局**
+
+[阮一峰的博客——flex语法](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+[阮一峰的博客——flex布局案例](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
+
+#### 总结
+传统的布局方法基于盒状模型，依赖 display属性 + position属性 + float属性，逻辑相对复杂，对于实现一些特殊效果，例如垂直居中，尤其复杂繁琐。而flex布局中的flex容器可以根据实际可用空间动态调整子元素的宽高比和顺序，使元素能够尽可能地利用可用空间，同时也能通过缩小来避免超出。flex布局提供了一套简便、完整、响应式的布局方案。
 
 参考博文： https://segmentfault.com/a/1190000008789039  http://www.imooc.com/wenda/detail/254035  https://www.w3cplus.com/css/guide-css-layout.html  https://www.cnblogs.com/autismtune/p/5202065.html  https://www.css88.com/book/css/properties/multi-column/columns.htm
