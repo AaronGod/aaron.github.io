@@ -18,8 +18,8 @@
   
   <entry>
     <title>wordpress升级</title>
-    <link href="https://aarongod.github.io/2019/02/03/wordpress-update/"/>
-    <id>https://aarongod.github.io/2019/02/03/wordpress-update/</id>
+    <link href="https://aarongod.github.io/wordpress-update/"/>
+    <id>https://aarongod.github.io/wordpress-update/</id>
     <published>2019-02-03T03:47:29.000Z</published>
     <updated>2019-10-15T09:10:59.424Z</updated>
     
@@ -42,8 +42,8 @@
   
   <entry>
     <title>vue如何打包上线</title>
-    <link href="https://aarongod.github.io/2019/02/03/vue-build/"/>
-    <id>https://aarongod.github.io/2019/02/03/vue-build/</id>
+    <link href="https://aarongod.github.io/vue-build/"/>
+    <id>https://aarongod.github.io/vue-build/</id>
     <published>2019-02-03T03:46:46.000Z</published>
     <updated>2019-10-15T09:10:59.423Z</updated>
     
@@ -62,8 +62,8 @@
   
   <entry>
     <title>php-config</title>
-    <link href="https://aarongod.github.io/2019/02/03/php-config/"/>
-    <id>https://aarongod.github.io/2019/02/03/php-config/</id>
+    <link href="https://aarongod.github.io/php-config/"/>
+    <id>https://aarongod.github.io/php-config/</id>
     <published>2019-02-03T03:46:28.000Z</published>
     <updated>2019-10-15T09:10:59.423Z</updated>
     
@@ -86,8 +86,8 @@
   
   <entry>
     <title>commonjs</title>
-    <link href="https://aarongod.github.io/2019/02/03/commonjs/"/>
-    <id>https://aarongod.github.io/2019/02/03/commonjs/</id>
+    <link href="https://aarongod.github.io/commonjs/"/>
+    <id>https://aarongod.github.io/commonjs/</id>
     <published>2019-02-03T03:46:09.000Z</published>
     <updated>2019-10-15T09:10:59.420Z</updated>
     
@@ -110,8 +110,8 @@
   
   <entry>
     <title>webpack</title>
-    <link href="https://aarongod.github.io/2019/01/22/webpack/"/>
-    <id>https://aarongod.github.io/2019/01/22/webpack/</id>
+    <link href="https://aarongod.github.io/webpack/"/>
+    <id>https://aarongod.github.io/webpack/</id>
     <published>2019-01-22T02:25:45.000Z</published>
     <updated>2019-10-15T09:10:59.424Z</updated>
     
@@ -132,8 +132,8 @@
   
   <entry>
     <title>wampserver</title>
-    <link href="https://aarongod.github.io/2019/01/18/wampserver/"/>
-    <id>https://aarongod.github.io/2019/01/18/wampserver/</id>
+    <link href="https://aarongod.github.io/wampserver/"/>
+    <id>https://aarongod.github.io/wampserver/</id>
     <published>2019-01-18T04:21:28.000Z</published>
     <updated>2019-10-15T09:10:59.424Z</updated>
     
@@ -154,8 +154,8 @@
   
   <entry>
     <title>css布局合集</title>
-    <link href="https://aarongod.github.io/2019/01/16/css-layout/"/>
-    <id>https://aarongod.github.io/2019/01/16/css-layout/</id>
+    <link href="https://aarongod.github.io/css-layout/"/>
+    <id>https://aarongod.github.io/css-layout/</id>
     <published>2019-01-16T02:38:25.000Z</published>
     <updated>2019-10-15T09:10:59.421Z</updated>
     
@@ -180,8 +180,8 @@
   
   <entry>
     <title>pagefile.sys</title>
-    <link href="https://aarongod.github.io/2019/01/03/pagefile-sys/"/>
-    <id>https://aarongod.github.io/2019/01/03/pagefile-sys/</id>
+    <link href="https://aarongod.github.io/pagefile-sys/"/>
+    <id>https://aarongod.github.io/pagefile-sys/</id>
     <published>2019-01-03T09:05:47.000Z</published>
     <updated>2019-10-15T09:10:59.422Z</updated>
     
@@ -200,8 +200,8 @@
   
   <entry>
     <title>Hello Hexo</title>
-    <link href="https://aarongod.github.io/2019/01/02/hello-world/"/>
-    <id>https://aarongod.github.io/2019/01/02/hello-world/</id>
+    <link href="https://aarongod.github.io/hello-world/"/>
+    <id>https://aarongod.github.io/hello-world/</id>
     <published>2019-01-02T09:33:21.000Z</published>
     <updated>2019-10-15T09:10:59.421Z</updated>
     
@@ -220,8 +220,8 @@
   
   <entry>
     <title>hexo写文章</title>
-    <link href="https://aarongod.github.io/2019/01/02/hexo%E5%86%99%E6%96%87%E7%AB%A0/"/>
-    <id>https://aarongod.github.io/2019/01/02/hexo写文章/</id>
+    <link href="https://aarongod.github.io/hexo%E5%86%99%E6%96%87%E7%AB%A0/"/>
+    <id>https://aarongod.github.io/hexo写文章/</id>
     <published>2019-01-02T09:33:21.000Z</published>
     <updated>2019-10-15T09:10:59.422Z</updated>
     
@@ -240,8 +240,8 @@
   
   <entry>
     <title>表单防止提交的几种方法</title>
-    <link href="https://aarongod.github.io/2019/01/02/form-noreapte/"/>
-    <id>https://aarongod.github.io/2019/01/02/form-noreapte/</id>
+    <link href="https://aarongod.github.io/form-noreapte/"/>
+    <id>https://aarongod.github.io/form-noreapte/</id>
     <published>2019-01-02T07:32:57.000Z</published>
     <updated>2019-10-15T09:10:59.421Z</updated>
     
