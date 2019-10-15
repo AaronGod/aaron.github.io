@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Aaron|Blog</title>
+  
+  <subtitle>前端 —— 我一直在路上</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://aarongod.github.io/"/>
+  <updated>2019-10-15T09:10:59.424Z</updated>
+  <id>https://aarongod.github.io/</id>
+  
+  <author>
+    <name>AaronGod</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>wordpress升级</title>
+    <link href="https://aarongod.github.io/2019/02/03/wordpress-update/"/>
+    <id>https://aarongod.github.io/2019/02/03/wordpress-update/</id>
+    <published>2019-02-03T03:47:29.000Z</published>
+    <updated>2019-10-15T09:10:59.424Z</updated>
+    
+    <summary type="html">
+    
+      迁移和升级wordpress构建的网站
+    
+    </summary>
+    
+      <category term="wordpress" scheme="https://aarongod.github.io/categories/wordpress/"/>
+    
+    
+      <category term="wordpress" scheme="https://aarongod.github.io/tags/wordpress/"/>
+    
+      <category term="wordpress迁移" scheme="https://aarongod.github.io/tags/wordpress%E8%BF%81%E7%A7%BB/"/>
+    
+      <category term="wordpress升级" scheme="https://aarongod.github.io/tags/wordpress%E5%8D%87%E7%BA%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue如何打包上线</title>
+    <link href="https://aarongod.github.io/2019/02/03/vue-build/"/>
+    <id>https://aarongod.github.io/2019/02/03/vue-build/</id>
+    <published>2019-02-03T03:46:46.000Z</published>
+    <updated>2019-10-15T09:10:59.423Z</updated>
+    
+    <summary type="html">
+    
+      关于vue开发完后怎样把需要的代码上传到服务器呢
+    
+    </summary>
+    
+      <category term="vuejs" scheme="https://aarongod.github.io/categories/vuejs/"/>
+    
+    
+      <category term="vue" scheme="https://aarongod.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>php-config</title>
+    <link href="https://aarongod.github.io/2019/02/03/php-config/"/>
+    <id>https://aarongod.github.io/2019/02/03/php-config/</id>
+    <published>2019-02-03T03:46:28.000Z</published>
+    <updated>2019-10-15T09:10:59.423Z</updated>
+    
+    <summary type="html">
+    
+      解读和配置php.ini文件
+    
+    </summary>
+    
+      <category term="php" scheme="https://aarongod.github.io/categories/php/"/>
+    
+    
+      <category term="php配置" scheme="https://aarongod.github.io/tags/php%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="phpini" scheme="https://aarongod.github.io/tags/phpini/"/>
+    
+      <category term="配置文件" scheme="https://aarongod.github.io/tags/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>commonjs</title>
+    <link href="https://aarongod.github.io/2019/02/03/commonjs/"/>
+    <id>https://aarongod.github.io/2019/02/03/commonjs/</id>
+    <published>2019-02-03T03:46:09.000Z</published>
+    <updated>2019-10-15T09:10:59.420Z</updated>
+    
+    <summary type="html">
+    
+      关于打包前的写法说明
+    
+    </summary>
+    
+      <category term="commonjs" scheme="https://aarongod.github.io/categories/commonjs/"/>
+    
+    
+      <category term="commonjs" scheme="https://aarongod.github.io/tags/commonjs/"/>
+    
+      <category term="commonjs规范" scheme="https://aarongod.github.io/tags/commonjs%E8%A7%84%E8%8C%83/"/>
+    
+      <category term="前端打吧写法" scheme="https://aarongod.github.io/tags/%E5%89%8D%E7%AB%AF%E6%89%93%E5%90%A7%E5%86%99%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>webpack</title>
+    <link href="https://aarongod.github.io/2019/01/22/webpack/"/>
+    <id>https://aarongod.github.io/2019/01/22/webpack/</id>
+    <published>2019-01-22T02:25:45.000Z</published>
+    <updated>2019-10-15T09:10:59.424Z</updated>
+    
+    <summary type="html">
+    
+      webpack的使用方法研究和构建项目实践
+    
+    </summary>
+    
+      <category term="webpack" scheme="https://aarongod.github.io/categories/webpack/"/>
+    
+    
+      <category term="webpack" scheme="https://aarongod.github.io/tags/webpack/"/>
+    
+      <category term="打包工具" scheme="https://aarongod.github.io/tags/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>wampserver</title>
+    <link href="https://aarongod.github.io/2019/01/18/wampserver/"/>
+    <id>https://aarongod.github.io/2019/01/18/wampserver/</id>
+    <published>2019-01-18T04:21:28.000Z</published>
+    <updated>2019-10-15T09:10:59.424Z</updated>
+    
+    <summary type="html">
+    
+      很久之前在公司的电脑上安装了wampserver，但不管怎么配置Apache中的httpd.conf文件始终都无法用其他设备访问到该服务器。。今天突然想重新研究一下，突然设置成功了。仅仅写帖子来记录一下这一时刻，为之后的安装找到正确的方法。
+    
+    </summary>
+    
+      <category term="wampserver" scheme="https://aarongod.github.io/categories/wampserver/"/>
+    
+    
+      <category term="wampserver配置方法" scheme="https://aarongod.github.io/tags/wampserver%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="wampserver" scheme="https://aarongod.github.io/tags/wampserver/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css布局合集</title>
+    <link href="https://aarongod.github.io/2019/01/16/css-layout/"/>
+    <id>https://aarongod.github.io/2019/01/16/css-layout/</id>
+    <published>2019-01-16T02:38:25.000Z</published>
+    <updated>2019-10-15T09:10:59.421Z</updated>
+    
+    <summary type="html">
+    
+      在使用swiper中看到使用的flex布局，突然想全面整理了解css的动态和最新流行的技术。这里将自己工作中使用到的css布局方法整理归纳出来，不想每次去百度啦！
+    
+    </summary>
+    
+      <category term="css布局" scheme="https://aarongod.github.io/categories/css%E5%B8%83%E5%B1%80/"/>
+    
+    
+      <category term="css" scheme="https://aarongod.github.io/tags/css/"/>
+    
+      <category term="flex伸缩盒子" scheme="https://aarongod.github.io/tags/flex%E4%BC%B8%E7%BC%A9%E7%9B%92%E5%AD%90/"/>
+    
+      <category term="grid网格布局" scheme="https://aarongod.github.io/tags/grid%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/"/>
+    
+      <category term="Multi-column多列布局" scheme="https://aarongod.github.io/tags/Multi-column%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pagefile.sys</title>
+    <link href="https://aarongod.github.io/2019/01/03/pagefile-sys/"/>
+    <id>https://aarongod.github.io/2019/01/03/pagefile-sys/</id>
+    <published>2019-01-03T09:05:47.000Z</published>
+    <updated>2019-10-15T09:10:59.422Z</updated>
+    
+    <summary type="html">
+    
+      为了腾出更多空间给C盘，把虚拟内存从C盘移到到D盘，很多人不会弄，下面我叫大家如何弄。虚拟内存的移动和替换。也就是pagefile.sys的删除替换
+    
+    </summary>
+    
+      <category term="系统" scheme="https://aarongod.github.io/categories/%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="windows system" scheme="https://aarongod.github.io/tags/windows-system/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello Hexo</title>
+    <link href="https://aarongod.github.io/2019/01/02/hello-world/"/>
+    <id>https://aarongod.github.io/2019/01/02/hello-world/</id>
+    <published>2019-01-02T09:33:21.000Z</published>
+    <updated>2019-10-15T09:10:59.421Z</updated>
+    
+    <summary type="html">
+    
+      刚刚搭建好的博客网站，生成的第一篇博客...
+    
+    </summary>
+    
+      <category term="其他" scheme="https://aarongod.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="随笔" scheme="https://aarongod.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo写文章</title>
+    <link href="https://aarongod.github.io/2019/01/02/hexo%E5%86%99%E6%96%87%E7%AB%A0/"/>
+    <id>https://aarongod.github.io/2019/01/02/hexo写文章/</id>
+    <published>2019-01-02T09:33:21.000Z</published>
+    <updated>2019-10-15T09:10:59.422Z</updated>
+    
+    <summary type="html">
+    
+      对于刚刚搭建好hexo的博客的小伙伴，不知道怎么写博客的的问题；
+    
+    </summary>
+    
+      <category term="博客" scheme="https://aarongod.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="hexo" scheme="https://aarongod.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>表单防止提交的几种方法</title>
+    <link href="https://aarongod.github.io/2019/01/02/form-noreapte/"/>
+    <id>https://aarongod.github.io/2019/01/02/form-noreapte/</id>
+    <published>2019-01-02T07:32:57.000Z</published>
+    <updated>2019-10-15T09:10:59.421Z</updated>
+    
+    <summary type="html">
+    
+      表单重复提交是在多用户Web应用中最常见、带来很多麻烦的一个问题。有很多的应用场景都会遇到重复提交问题;怎么能较好的防止表单的重复提交呢？
+    
+    </summary>
+    
+      <category term="前端" scheme="https://aarongod.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="form" scheme="https://aarongod.github.io/tags/form/"/>
+    
+  </entry>
+  
+</feed>

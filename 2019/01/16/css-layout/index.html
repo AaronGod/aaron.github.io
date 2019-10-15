@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css,flex伸缩盒子,grid网格布局,Multi-column多列布局,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Aaron|Blog" type="application/atom+xml">
+
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/fc6b751d.js","daovoice")
+  daovoice('init', {
+    app_id: "fc6b751d"
+  });
+  daovoice('update');
+  </script>
+
+
+<meta name="description" content="在使用swiper中看到使用的flex布局，突然想全面整理了解css的动态和最新流行的技术。这里将自己工作中使用到的css布局方法整理归纳出来，不想每次去百度啦！">
+<meta name="keywords" content="css,flex伸缩盒子,grid网格布局,Multi-column多列布局">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css布局合集">
+<meta property="og:url" content="https://aarongod.github.io/2019/01/16/css-layout/index.html">
+<meta property="og:site_name" content="Aaron|Blog">
+<meta property="og:description" content="在使用swiper中看到使用的flex布局，突然想全面整理了解css的动态和最新流行的技术。这里将自己工作中使用到的css布局方法整理归纳出来，不想每次去百度啦！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://plf3trb76.bkt.clouddn.com/layout_demo1.png">
+<meta property="og:image" content="http://plf3trb76.bkt.clouddn.com/muti-cols.png">
+<meta property="og:image" content="http://plf3trb76.bkt.clouddn.com/layout_demo2.png">
+<meta property="og:updated_time" content="2019-10-15T09:10:59.421Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css布局合集">
+<meta name="twitter:description" content="在使用swiper中看到使用的flex布局，突然想全面整理了解css的动态和最新流行的技术。这里将自己工作中使用到的css布局方法整理归纳出来，不想每次去百度啦！">
+<meta name="twitter:image" content="http://plf3trb76.bkt.clouddn.com/layout_demo1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":"ture","onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://aarongod.github.io/2019/01/16/css-layout/">
+
+
+
+
+
+  <title>css布局合集 | Aaron|Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Aaron|Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">前端 —— 我一直在路上</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-categories" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aarongod.github.io/2019/01/16/css-layout/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AaronGod">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aaron|Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css布局合集</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T10:38:25+08:00">
+                2019-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/css布局/" itemprop="url" rel="index">
+                    <span itemprop="name">css布局</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  在使用swiper中看到使用的flex布局，突然想全面整理了解css的动态和最新流行的技术。这里将自己工作中使用到的css布局方法整理归纳出来，不想每次去百度啦！
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="写在前列"><a href="#写在前列" class="headerlink" title="写在前列"></a>写在前列</h2><p>布局是CSS中一个重要部分，本文总结了CSS布局中的常用技巧，包括常用的水平居中、垂直居中方法，以及单列布局、多列布局的多种实现方式（包括传统的盒模型布局和比较新的flex布局实现），希望能给需要的小伙伴带来一些帮助。</p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol>
+<li>传统布局<blockquote>
+<p>圣杯布局</p>
+</blockquote>
+</li>
+<li>多列布局</li>
+<li>flex布局</li>
+<li>grid布局<h3 id="传统布局"><a href="#传统布局" class="headerlink" title="传统布局"></a>传统布局</h3></li>
+</ol>
+<h4 id="居中布局"><a href="#居中布局" class="headerlink" title="居中布局"></a>居中布局</h4><p>居中在布局中很常见，假设DOM文档结构如下，子元素要在父元素中居中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>水平居中</li>
+</ol>
+<ul>
+<li>子元素为行内元素：对父元素设置<code>text-align:center</code>;</li>
+<li>子元素为定宽块状元素: 设置左右<code>margin值为auto</code>;</li>
+<li>子元素为不定宽块状元素: 设置子元素为<code>display:inline</code>,然后在父元素上设置<code>text-align:center</code>;</li>
+<li>通用方案: flex布局，对父元素设置<code>display:flex;justify-content:center</code>;</li>
+</ul>
+<ol start="2">
+<li>垂直居中</li>
+</ol>
+<ul>
+<li>父元素一定，子元素为单行内联文本：设置父元素的height等于行高line-height；</li>
+<li>父元素一定，子元素为多行内联文本：设置父元素的display:table-cell或inline-block，再设置vertical-align:middle;（这里有错误）；</li>
+<li>子元素块级垂直居中： 代码如下，</li>
+</ul>
+<p>引用博文：<a href="https://www.jianshu.com/p/dea069fecb62" target="_blank" rel="noopener">利用vertical-align:middle垂直居中</a>;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;parent5 box&quot;&gt;</span><br><span class="line">    &lt;!-- 不能水平居中 --&gt;</span><br><span class="line">    &lt;div class=&quot;child5&quot;&gt;</span><br><span class="line">        多行内联文本垂直居中写法</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;help&quot;&gt;&lt;/div&gt;&lt;!--可以试试伪类--&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">.parent5 &#123;</span><br><span class="line">    width:100px;</span><br><span class="line">    height:100px;</span><br><span class="line">&#125;</span><br><span class="line">.child5 &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">    width: 80px;</span><br><span class="line">    overflow:hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.parent5 .help &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 100%;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    vertical-align: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>子元素块状元素:设置子元素position:fixed（absolute），然后设置margin:auto(无效); 或者当子元素定宽度时，父级元素使用position:relative;子元素使用position:absolute;margin-top:负一半宽度;top:50%; </li>
+<li>通用方案: flex布局，给父元素设置{display:flex; align-items:center;}</li>
+</ul>
+<p><strong>演示代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;居中布局&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .box &#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">            height: 100px;</span><br><span class="line"></span><br><span class="line">            border: 1px solid red;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .header,</span><br><span class="line">        .footer &#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 80px;</span><br><span class="line">            background-color: bisque;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .layout &#123;</span><br><span class="line">            max-width: 1200px;</span><br><span class="line">            margin: auto;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .layout &#123;</span><br><span class="line">            display: flex;</span><br><span class="line">            justify-content: space-around;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .parent1 &#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /* .parent2 &#123;</span><br><span class="line">            margin: auto;</span><br><span class="line">        &#125; */</span><br><span class="line">        .child2 &#123;</span><br><span class="line">            width: 50px;</span><br><span class="line">            margin: auto;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .parent3 &#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .child3 &#123;</span><br><span class="line">            display: inline;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .parent4 &#123;</span><br><span class="line">            display: flex;</span><br><span class="line">            justify-content: center;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .child5 &#123;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            vertical-align: middle;</span><br><span class="line">            width: 80px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .parent5 &#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .parent5::after &#123;</span><br><span class="line">            width: 0;</span><br><span class="line">            height: 100%;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            vertical-align: middle;</span><br><span class="line">            content: &apos;&apos;;</span><br><span class="line">            margin-right: -5px;</span><br><span class="line">            /* 水平居中有5个像素的误差 */</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /* .parent5 .help &#123;</span><br><span class="line">            width: 0;</span><br><span class="line">            height: 100%;</span><br><span class="line">            display: inline-block;</span><br><span class="line">            vertical-align: middle;</span><br><span class="line">        &#125; */</span><br><span class="line"></span><br><span class="line">        .parent6 &#123;</span><br><span class="line">            display: flex;</span><br><span class="line">            align-items: center;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;header&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;layout&quot;&gt;</span><br><span class="line">            头部内容</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;layout&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;parent1 box&quot;&gt;</span><br><span class="line">                &lt;!-- &lt;div class=&quot;child&quot;&gt;&lt;/div&gt; --&gt;</span><br><span class="line">                &lt;span class=&quot;child1&quot;&gt;行内元素demo1&lt;/span&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;parent2 box&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;child2&quot;&gt;</span><br><span class="line">                    我是块级元素定宽</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;parent3 box&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;child3&quot;&gt;</span><br><span class="line">                    我是块级元素不定宽</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;parent4 box&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;child4&quot;&gt;</span><br><span class="line">                    flex</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">            &lt;div class=&quot;parent5 box&quot;&gt;</span><br><span class="line">                &lt;!-- 不能水平居中 --&gt;</span><br><span class="line">                &lt;div class=&quot;child5&quot;&gt;</span><br><span class="line">                    多行内联文本垂直居中写法</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;!-- &lt;div class=&quot;help&quot;&gt;&lt;/div&gt; --&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">            &lt;div class=&quot;parent6 box&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;child6&quot;&gt;</span><br><span class="line">                    多行垂直居中写法</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;footer&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;layout&quot;&gt;</span><br><span class="line">            底部内容</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>效果图</strong><br><img src="http://plf3trb76.bkt.clouddn.com/layout_demo1.png" alt="效果图"></p>
+<h4 id="单列布局"><a href="#单列布局" class="headerlink" title="单列布局"></a>单列布局</h4><p>单列布局有两种方式：一种是header、content、footer宽度都相同，其一般不会占满浏览器的最宽宽度，但当浏览器宽度缩小低于其最大宽度时，宽度会自适应；一种是header、footer宽度为浏览器宽度，但content以及header和footer里的内容却不会占满浏览器宽度。</p>
+<ul>
+<li>对于第一种，对header、content、footer统一设置width或max-width，并通过margin:auto实现居中。</li>
+</ul>
+<p>代码部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- html部分 --&gt;</span><br><span class="line">&lt;div class=&quot;layout&quot;&gt;</span><br><span class="line">  &lt;div id=&quot;header&quot;&gt;头部&lt;/div&gt;</span><br><span class="line">  &lt;div id=&quot;content&quot;&gt;内容&lt;/div&gt;</span><br><span class="line">  &lt;div id=&quot;footer&quot;&gt;尾部&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- css部分 --&gt;</span><br><span class="line">.layout&#123;</span><br><span class="line">  /*   width: 960px; *//*设置width当浏览器窗口宽度小于960px时，单列布局不会自适应。*/</span><br><span class="line">    max-width: 960px;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>对于第二种，header、footer的内容宽度为100%，但header、footer的内容区以及content统一设置max-width，并通过margin:auto实现居中。</li>
+</ul>
+<p>代码部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- html 代码部分 --&gt;</span><br><span class="line">&lt;div id=&quot;header&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;layout&quot;&gt;头部&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;content&quot; class=&quot;layout&quot;&gt;内容&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;footer&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;layout&quot;&gt;尾部&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- css 部分 --&gt;</span><br><span class="line">#header,#footer &#123;</span><br><span class="line">    width:100%;</span><br><span class="line">&#125;</span><br><span class="line">.layout &#123;</span><br><span class="line">    max-width: 1200px;</span><br><span class="line">    margin: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="二列-amp-三列布局"><a href="#二列-amp-三列布局" class="headerlink" title="二列&amp;三列布局"></a>二列&amp;三列布局</h4><p><img src="http://plf3trb76.bkt.clouddn.com/muti-cols.png" alt="多列布局示意图"></p>
+<ul>
+<li>二列布局的特征是侧栏固定宽度，主栏自适应宽度。</li>
+<li>三列布局的特征是两侧两列固定宽度，中间列自适应宽度。</li>
+</ul>
+<p>对于传统的实现方法，主要讨论上图中前三种布局，经典的带有侧栏的二栏布局以及带有左右侧栏的三栏布局，对于flex布局，实现了上图的五种布局。</p>
+<h5 id="float-margin"><a href="#float-margin" class="headerlink" title="float+margin"></a>float+margin</h5><p>设置两个侧栏分别向左向右浮动，中间列通过外边距给两个侧栏腾出空间，中间列的宽度根据浏览器窗口自适应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;content&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;sub&quot;&gt;sub&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;extra&quot;&gt;extra&lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;main&quot;&gt;main&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- 对两边侧栏分别设置宽度，并对左侧栏添加左浮动，对右侧栏添加有浮动。</span><br><span class="line">对主面板设置左右外边距，margin-left的值为左侧栏的宽度，margin-right的值为右侧栏的宽度。 --&gt;</span><br><span class="line">.sub&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    float: left;</span><br><span class="line">&#125;</span><br><span class="line">.extra&#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    float: right;</span><br><span class="line">&#125;</span><br><span class="line">.main&#123;</span><br><span class="line">    margin-left: 100px; </span><br><span class="line">    margin-right: 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>note:</code><br>1.注意DOM文档的书写顺序，先写两侧栏，再写主面板，更换后则侧栏会被挤到下一列（圣杯布局和双飞翼布局都会用到）<br>2.这种布局方式比较简单明了，但缺点是渲染时先渲染了侧边栏，而不是比较重要的主面板。</p>
+</blockquote>
+<ul>
+<li>二列的实现方法:如果是左边带有侧栏的二栏布局，则去掉右侧栏，不要设置主面板的margin-right值，其他操作相同。反之亦然。</li>
+</ul>
+<h5 id="position-margin"><a href="#position-margin" class="headerlink" title="position+margin"></a>position+margin</h5><p> 通过绝对定位将两个侧栏固定，同样通过外边距给两个侧栏腾出空间，中间列自适应。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 1.对两边侧栏分别设置宽度，设置定位方式为绝对定位。</span><br><span class="line">2. 设置两侧栏的top值都为0，设置左侧栏的left值为0， 右侧栏的right值为0。</span><br><span class="line">3. 对主面板设置左右外边距，margin-left的值为左侧栏的宽度，margin-right的值为右侧栏的宽度。 --&gt;</span><br><span class="line">&lt;div class=&quot;sub&quot;&gt;left&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;main&quot;&gt;main&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;extra&quot;&gt;right&lt;/div&gt;</span><br><span class="line">.sub, .extra &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0; </span><br><span class="line">    width: 200px;</span><br><span class="line">&#125;</span><br><span class="line">.sub &#123; </span><br><span class="line">    left: 0;</span><br><span class="line">&#125;</span><br><span class="line">.extra &#123; </span><br><span class="line">    right: 0; </span><br><span class="line">&#125;</span><br><span class="line">.main &#123; </span><br><span class="line">    margin: 0 200px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>note:</code><br>1.与上一种方法相比，本种方法是通过定位来实现侧栏的位置固定。<br>2.如果中间栏含有最小宽度限制，或是含有宽度的内部元素，则浏览器窗口小到一定程度，主面板与侧栏会发生重叠。<br>3.如果是左边带有侧栏的二栏布局，则去掉右侧栏，不要设置主面板的margin-right值，其他操作相同。反之亦然。</p>
+</blockquote>
+<h5 id="圣杯布局-float-负margin-padding-position"><a href="#圣杯布局-float-负margin-padding-position" class="headerlink" title="圣杯布局(float + 负margin + padding + position)"></a>圣杯布局(float + 负margin + padding + position)</h5><p>原理说明：<br>主面板设置宽度为100%，主面板与两个侧栏都设置浮动，常见为左浮动，这时两个侧栏会被主面板挤下去。通过负边距将浮动的侧栏拉上来，左侧栏的负边距为100%，刚好是窗口的宽度，因此会从主面板下面的左边跑到与主面板对齐的左边，右侧栏此时浮动在主面板下面的左边，设置负边距为负的自身宽度刚好浮动到主面板对齐的右边。为了避免侧栏遮挡主面板内容，在外层设置左右padding值为左右侧栏的宽度，给侧栏腾出空间，此时主面板的宽度减小。由于侧栏的负margin都是相对主面板的，两个侧栏并不会像我们理想中的停靠在左右两边，而是跟着缩小的主面板一起向中间靠拢。此时使用相对布局，调整两个侧栏到相应的位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;bd&quot;&gt;         </span><br><span class="line">    &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;        </span><br><span class="line">    &lt;div class=&quot;sub&quot;&gt;&lt;/div&gt;        </span><br><span class="line">    &lt;div class=&quot;extra&quot;&gt;&lt;/div&gt;  </span><br><span class="line">&lt;/div&gt; </span><br><span class="line"></span><br><span class="line">    布局步骤:</span><br><span class="line"></span><br><span class="line">    三者都设置向左浮动。</span><br><span class="line"></span><br><span class="line">    设置main宽度为100%，设置两侧栏的宽度。</span><br><span class="line"></span><br><span class="line">    设置 负边距，sub设置负左边距为100%，extra设置负左边距为负的自身宽度。</span><br><span class="line"></span><br><span class="line">    设置main的padding值给左右两个子面板留出空间。</span><br><span class="line"></span><br><span class="line">    设置两个子面板为相对定位，sub的left值为负的sub宽度，extra的right值为负的extra宽度。</span><br><span class="line"></span><br><span class="line">.main &#123;        </span><br><span class="line">    float: left;       </span><br><span class="line">    width: 100%;   </span><br><span class="line"> &#125;  </span><br><span class="line"> .sub &#123;       </span><br><span class="line">    float: left;        </span><br><span class="line">    width: 190px;        </span><br><span class="line">    margin-left: -100%;               </span><br><span class="line">    position: relative;  </span><br><span class="line">    left: -190px;  </span><br><span class="line">&#125;   </span><br><span class="line">.extra &#123;        </span><br><span class="line">    float: left;        </span><br><span class="line">    width: 230px;        </span><br><span class="line">    margin-left: -230px; </span><br><span class="line">    position: relative; </span><br><span class="line">    right: -230px;  </span><br><span class="line"> &#125;</span><br><span class="line">#bd &#123;        </span><br><span class="line">    padding: 0 230px 0 190px;   </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>NOTE:<br>1.DOM元素的书写顺序不得更改。<br>2.当面板的main内容部分比两边的子面板宽度小的时候，布局就会乱掉。可以通过设置main的min-width属性或使用双飞翼布局避免问题。<br>3.二列的实现方法.如果是左边带有侧栏的二栏布局，则去掉右侧栏，不要设置主面板的padding-right值，其他操作相同。反之亦然。</p>
+</blockquote>
+<h5 id="双飞翼布局-float-负margin-margin"><a href="#双飞翼布局-float-负margin-margin" class="headerlink" title="双飞翼布局(float + 负margin + margin)"></a>双飞翼布局(float + 负margin + margin)</h5><blockquote>
+<p>原理说明：<br>双飞翼布局和圣杯布局的思想有些相似，都利用了浮动和负边距，但双飞翼布局在圣杯布局上做了改进，在main元素上加了一层div, 并设置margin,由于两侧栏的负边距都是相对于main-wrap而言，main的margin值变化便不会影响两个侧栏，因此省掉了对两侧栏设置相对布局的步骤。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;main-wrap&quot; class=&quot;column&quot;&gt;</span><br><span class="line">      &lt;div id=&quot;main&quot;&gt;#main&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;sub&quot;&gt;&lt;/div&gt;        </span><br><span class="line">&lt;div class=&quot;extra&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">布局步骤:</span><br><span class="line">1. 三者都设置向左浮动。</span><br><span class="line">2. 设置main-wrap宽度为100%，设置两个侧栏的宽度。</span><br><span class="line">3. 设置负边距，sub设置负左边距为100%，extra设置负左边距为负的自身宽度。</span><br><span class="line">4. 设置main的margin值给左右两个子面板留出空间。</span><br><span class="line"></span><br><span class="line">.main-wrap &#123;        </span><br><span class="line">    float: left;       </span><br><span class="line">    width: 100%;   </span><br><span class="line"> &#125;  </span><br><span class="line"> .sub &#123;       </span><br><span class="line">    float: left;        </span><br><span class="line">    width: 190px;        </span><br><span class="line">    margin-left: -100%;   </span><br><span class="line">&#125;   </span><br><span class="line">.extra &#123;        </span><br><span class="line">    float: left;        </span><br><span class="line">    width: 230px;        </span><br><span class="line">    margin-left: -230px; </span><br><span class="line"> &#125;</span><br><span class="line">.main &#123;    </span><br><span class="line">    margin: 0 230px 0 190px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>NOTE<br>1.圣杯采用的是padding，而双飞翼采用的margin，解决了圣杯布局main的最小宽度不能小于左侧栏的缺点。<br>2.双飞翼布局不用设置相对布局，以及对应的left和right值。<br>3.通过引入相对布局，可以实现三栏布局的各种组合，例如对右侧栏设置position: relative; left: 190px; ,可以实现sub+extra+main的布局。<br>4.二列实现方法。如果是左边带有侧栏的二栏布局，则去掉右侧栏，不要设置main-wrap的margin-right值，其他操作相同。反之亦然。</p>
+</blockquote>
+<p><strong>demo code</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;多列布局&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        .layout &#123;</span><br><span class="line">            max-width: 1200px;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .header,</span><br><span class="line">        .footer &#123;</span><br><span class="line">            height: 50px;</span><br><span class="line">            background-color: aquamarine;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test1&gt;.sub &#123;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test1&gt;.extra &#123;</span><br><span class="line">            float: right;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .sub &#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .extra &#123;</span><br><span class="line">            width: 100px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .main &#123;</span><br><span class="line">            margin-left: 100px;</span><br><span class="line">            margin-right: 100px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test2 &#123;</span><br><span class="line">            position: relative;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test2&gt;.sub &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            left: 0;</span><br><span class="line">            top: 0;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test2&gt;.extra &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 0;</span><br><span class="line">            right: 0;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test3 &#123;</span><br><span class="line">            padding: 0 100px;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test3&gt;.main &#123;</span><br><span class="line">            width: 100%;</span><br><span class="line">            min-width: 100px;</span><br><span class="line">            /*设置一个最小宽度*/</span><br><span class="line">            margin: 0;</span><br><span class="line">            /*消除之前设置的margin值*/</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test3&gt;.main,</span><br><span class="line">        .test3&gt;.sub,</span><br><span class="line">        .test3&gt;.extra &#123;</span><br><span class="line">            float: left;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test3&gt;.sub &#123;</span><br><span class="line">            margin-left: -100%;</span><br><span class="line">            position: relative;</span><br><span class="line">            left: -100px;</span><br><span class="line">            /*自身宽度*/</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test3&gt;.extra &#123;</span><br><span class="line">            margin-left: -100px;</span><br><span class="line">            position: relative;</span><br><span class="line">            right: -100px;</span><br><span class="line">            /*自身宽度*/</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test4 &#123;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">            /*清除浮动*/</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test4&gt;.main-wrap &#123;</span><br><span class="line">            float: left;</span><br><span class="line">            width: 100%;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test4&gt;.sub &#123;</span><br><span class="line">            float: left;</span><br><span class="line">            margin-left: -100%;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test4&gt;.extra &#123;</span><br><span class="line">            float: left;</span><br><span class="line">            margin-left: -100px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .test4&gt;.main &#123;</span><br><span class="line">            margin: 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;layout&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;header&quot;&gt;头部&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;content&quot;&gt;</span><br><span class="line">            内容</span><br><span class="line">            &lt;div class=&quot;test&quot; style=&quot;margin-top:20px;&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;test1&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;sub&quot;&gt;左边&lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;extra&quot;&gt;右边&lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;main&quot;&gt;中间&lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;hr&gt;</span><br><span class="line"></span><br><span class="line">                &lt;div class=&quot;test2&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;sub&quot;&gt;左边&lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;main&quot;&gt;中间&lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;extra&quot;&gt;右边&lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                &lt;hr&gt;</span><br><span class="line">                &lt;br&gt;</span><br><span class="line">                &lt;p&gt;圣杯布局&lt;/p&gt;</span><br><span class="line">                &lt;div class=&quot;test3&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;main&quot;&gt;中间&lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;sub&quot;&gt;左边&lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;extra&quot;&gt;右边&lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">                &lt;hr&gt;</span><br><span class="line">                &lt;br&gt;</span><br><span class="line">                &lt;p&gt;双飞翼布局&lt;/p&gt;</span><br><span class="line">                &lt;div class=&quot;test4&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;main-wrap&quot;&gt;</span><br><span class="line">                        &lt;div class=&quot;main&quot;&gt;中间&lt;/div&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;sub&quot;&gt;左边&lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;extra&quot;&gt;右边&lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;hr&gt;</span><br><span class="line">        &lt;br&gt;</span><br><span class="line">        &lt;div class=&quot;footer&quot;&gt;底部&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>效果图</strong><br><img src="http://plf3trb76.bkt.clouddn.com/layout_demo2.png" alt="demo2 效果图"></p>
+<h3 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h3><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">阮一峰的博客——flex语法</a><br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">阮一峰的博客——flex布局案例</a></p>
+<h3 id="grid布局"><a href="#grid布局" class="headerlink" title="grid布局"></a>grid布局</h3><p>简介</p>
+<blockquote>
+<p>CSS Grid 布局是 CSS 中最强大的布局系统。与 flexbox 的一维布局系统不同，CSS Grid 布局是一个二维布局系统，也就意味着它可以同时处理列和行。通过将 CSS 规则应用于 父元素 (成为 Grid Container 网格容器)和其 子元素（成为 Grid Items 网格项），你就可以轻松使用 Grid(网格) 布局。</p>
+</blockquote>
+<p><a href="https://www.imooc.com/article/43143" target="_blank" rel="noopener">玩转grid布局</a></p>
+<p><a href="https://www.css88.com/archives/8510" target="_blank" rel="noopener">CSS Grid 布局完全指南(图解 Grid 详细教程)</a></p>
+<h3 id="Multi-column多列布局"><a href="#Multi-column多列布局" class="headerlink" title="Multi-column多列布局"></a>Multi-column多列布局</h3><p><a href="https://blog.csdn.net/weixin_42663701/article/details/81485936" target="_blank" rel="noopener">多列布局(multi-column)</a></p>
+<p><a href="https://blog.csdn.net/weixin_39141044/article/details/82432866" target="_blank" rel="noopener">CSS3多列布局（Multi-column）</a></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>传统的布局方法基于盒状模型，依赖 display属性 + position属性 + float属性，逻辑相对复杂，对于实现一些特殊效果，例如垂直居中，尤其复杂繁琐。而flex布局中的flex容器可以根据实际可用空间动态调整子元素的宽高比和顺序，使元素能够尽可能地利用可用空间，同时也能通过缩小来避免超出。flex布局提供了一套简便、完整、响应式的布局方案。</p>
+<p>参考博文： <a href="https://segmentfault.com/a/1190000008789039" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008789039</a>  <a href="http://www.imooc.com/wenda/detail/254035" target="_blank" rel="noopener">http://www.imooc.com/wenda/detail/254035</a>  <a href="https://www.w3cplus.com/css/guide-css-layout.html" target="_blank" rel="noopener">https://www.w3cplus.com/css/guide-css-layout.html</a>  <a href="https://www.cnblogs.com/autismtune/p/5202065.html" target="_blank" rel="noopener">https://www.cnblogs.com/autismtune/p/5202065.html</a>  <a href="https://www.css88.com/book/css/properties/multi-column/columns.htm" target="_blank" rel="noopener">https://www.css88.com/book/css/properties/multi-column/columns.htm</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>css布局合集</p>
+  <p><span>文章作者:</span>AaronGod</p>
+  <p><span>发布时间:</span>2019年01月16日 - 10:38:25</p>
+  <p><span>最后更新:</span>2019年10月15日 - 17:10:59</p>
+  <p><span>原始链接:</span><a href="/2019/01/16/css-layout/" title="css布局合集">https://aarongod.github.io/2019/01/16/css-layout/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://aarongod.github.io/2019/01/16/css-layout/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+          
+    </div>
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    AaronGod
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://aarongod.github.io/2019/01/16/css-layout/" title="css布局合集">https://aarongod.github.io/2019/01/16/css-layout/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"><i class="fa fa-tag"></i> css</a>
+          
+            <a href="/tags/flex伸缩盒子/" rel="tag"><i class="fa fa-tag"></i> flex伸缩盒子</a>
+          
+            <a href="/tags/grid网格布局/" rel="tag"><i class="fa fa-tag"></i> grid网格布局</a>
+          
+            <a href="/tags/Multi-column多列布局/" rel="tag"><i class="fa fa-tag"></i> Multi-column多列布局</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/03/pagefile-sys/" rel="next" title="pagefile.sys">
+                <i class="fa fa-chevron-left"></i> pagefile.sys
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/18/wampserver/" rel="prev" title="wampserver">
+                wampserver <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="AaronGod">
+            
+              <p class="site-author-name" itemprop="name">AaronGod</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+    </iframe>
+</div>
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前列"><span class="nav-number">1.</span> <span class="nav-text">写在前列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-number">1.1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传统布局"><span class="nav-number">1.2.</span> <span class="nav-text">传统布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#居中布局"><span class="nav-number">1.2.1.</span> <span class="nav-text">居中布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单列布局"><span class="nav-number">1.2.2.</span> <span class="nav-text">单列布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二列-amp-三列布局"><span class="nav-number">1.2.3.</span> <span class="nav-text">二列&amp;三列布局</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#float-margin"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">float+margin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#position-margin"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">position+margin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#圣杯布局-float-负margin-padding-position"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">圣杯布局(float + 负margin + padding + position)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#双飞翼布局-float-负margin-margin"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">双飞翼布局(float + 负margin + margin)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex布局"><span class="nav-number">1.3.</span> <span class="nav-text">flex布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grid布局"><span class="nav-number">1.4.</span> <span class="nav-text">grid布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-column多列布局"><span class="nav-number">1.5.</span> <span class="nav-text">Multi-column多列布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">1.5.1.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AaronGod</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
