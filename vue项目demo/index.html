@@ -91,18 +91,18 @@
   </script>
 
 
-<meta name="description" content="关于vue开发完后怎样把需要的代码上传到服务器呢">
+<meta name="description" content="vue 项目记录对 vue 项目初识的一个记录， 以后直接按照这里的步骤建立 vue 项目了。 vue 的目录结构   目录/文件 说明     build 这个是我们最终发布的时候会把代码发布在这里，在开发阶段，我们基本不用管。   config 配置目录，默认配置没有问题，所以我们也不用管   node_modules 这个目录是存放我们项目开发依赖的一些模块，这里面有很多很多内容，不过高兴的">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue如何打包上线">
-<meta property="og:url" content="https://aarongod.github.io/vue-build/index.html">
+<meta property="og:title" content="vue项目demo">
+<meta property="og:url" content="https://aarongod.github.io/vue项目demo/index.html">
 <meta property="og:site_name" content="Aaron|Blog">
-<meta property="og:description" content="关于vue开发完后怎样把需要的代码上传到服务器呢">
+<meta property="og:description" content="vue 项目记录对 vue 项目初识的一个记录， 以后直接按照这里的步骤建立 vue 项目了。 vue 的目录结构   目录/文件 说明     build 这个是我们最终发布的时候会把代码发布在这里，在开发阶段，我们基本不用管。   config 配置目录，默认配置没有问题，所以我们也不用管   node_modules 这个目录是存放我们项目开发依赖的一些模块，这里面有很多很多内容，不过高兴的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-15T09:10:59.423Z">
+<meta property="og:updated_time" content="2019-10-21T04:29:49.827Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue如何打包上线">
-<meta name="twitter:description" content="关于vue开发完后怎样把需要的代码上传到服务器呢">
+<meta name="twitter:title" content="vue项目demo">
+<meta name="twitter:description" content="vue 项目记录对 vue 项目初识的一个记录， 以后直接按照这里的步骤建立 vue 项目了。 vue 的目录结构   目录/文件 说明     build 这个是我们最终发布的时候会把代码发布在这里，在开发阶段，我们基本不用管。   config 配置目录，默认配置没有问题，所以我们也不用管   node_modules 这个目录是存放我们项目开发依赖的一些模块，这里面有很多很多内容，不过高兴的">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://aarongod.github.io/vue-build/">
+  <link rel="canonical" href="https://aarongod.github.io/vue项目demo/">
 
 
 
 
 
-  <title>vue如何打包上线 | Aaron|Blog</title>
+  <title>vue项目demo | Aaron|Blog</title>
   
 
 
@@ -276,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aarongod.github.io/vue-build/">
+    <link itemprop="mainEntityOfPage" href="https://aarongod.github.io/vue项目demo/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AaronGod">
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">vue如何打包上线</h1>
+          <h1 class="post-title" itemprop="name headline">vue项目demo</h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-03T11:46:46+08:00">
-                2019-02-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-21T12:10:30+08:00">
+                2019-10-21
               </time>
             
 
@@ -328,8 +328,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/vuejs/" itemprop="url" rel="index">
-                    <span itemprop="name">vuejs</span>
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  229
+                  333
                 </span>
               
 
@@ -382,10 +382,6 @@
           
 
           
-              <div class="post-description">
-                  关于vue开发完后怎样把需要的代码上传到服务器呢
-              </div>
-          
 
         </div>
       </header>
@@ -400,14 +396,57 @@
       
 
       
-        <p><strong>vue的项目如何上线</strong><br>vue的官方都说了，这个框架只是做了view这一层，所以并不是把这些开发完的东西直接拷贝到服务器上，而且需要打包为静态文件上传服务器的。</p>
-<p>##过程<br><strong>首先需要修改一下配置文件再打包</strong>，很多人都是遇到过打包后运行一片空白等等问题，这些问题主要就是路径的问题，所以需要修改config下面的index.js这个配置文件里选项：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assetPublicPath: &apos;./&apos;</span><br><span class="line">productionSourceMap: false</span><br></pre></td></tr></table></figure>
-<p>第一个要修改的就是静态文件的路径，打包后静态文件就在当前目录下，所以修改为./。<br>第二个是环境设置为生产环境</p>
-<p>修改好后打开cmd运行下面的命令打包即可：<br><code>npm run build</code></p>
-<hr>
-<p>看教程，看视频</p>
-<p>##参考原文<br><a href="https://blog.csdn.net/crazywoniu/article/details/74065721" target="_blank" rel="noopener">vue.js项目打包上线</a></p>
+        <h1 id="vue-项目记录"><a href="#vue-项目记录" class="headerlink" title="vue 项目记录"></a>vue 项目记录</h1><p>对 vue 项目初识的一个记录， 以后直接按照这里的步骤建立 vue 项目了。</p>
+<h2 id="vue-的目录结构"><a href="#vue-的目录结构" class="headerlink" title="vue 的目录结构"></a>vue 的目录结构</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">目录/文件</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">build</td>
+<td style="text-align:left">这个是我们最终发布的时候会把代码发布在这里，在开发阶段，我们基本不用管。</td>
+</tr>
+<tr>
+<td style="text-align:left">config</td>
+<td style="text-align:left">配置目录，默认配置没有问题，所以我们也不用管</td>
+</tr>
+<tr>
+<td style="text-align:left">node_modules</td>
+<td style="text-align:left">这个目录是存放我们项目开发依赖的一些模块，这里面有很多很多内容，不过高兴的是，我们也不用管</td>
+</tr>
+<tr>
+<td style="text-align:left">src</td>
+<td style="text-align:left">我们的开发目录，基本上绝大多数工作都是在这里开展的</td>
+</tr>
+<tr>
+<td style="text-align:left">static</td>
+<td style="text-align:left">资源目录，我们可以把一些图片啊，字体啊，放在这里。</td>
+</tr>
+<tr>
+<td style="text-align:left">test</td>
+<td style="text-align:left">初始测试目录，没用，删除即可</td>
+</tr>
+<tr>
+<td style="text-align:left">.xxx 文件</td>
+<td style="text-align:left">这些是一些配置文件，包括语法配置，git 配置等。基本不用管，放着就是了</td>
+</tr>
+<tr>
+<td style="text-align:left">index.html</td>
+<td style="text-align:left">首页入口文件，基本不用管，如果是开发移动端项目，可以在 head 区域加上你合适的 meta 头</td>
+</tr>
+<tr>
+<td style="text-align:left">package.json</td>
+<td style="text-align:left">项目配置文件。前期基本不用管，但是你可以找一下相关的资料，学习一下里面的各项配置。至少，要知道分别是干嘛的。初期就不管了。</td>
+</tr>
+<tr>
+<td style="text-align:left">READE.md</td>
+<td style="text-align:left">不用管</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -431,17 +470,17 @@
 -->
 
 <!-- 
-  <p><span>本文标题:</span>vue如何打包上线</a></p>
+  <p><span>本文标题:</span>vue项目demo</a></p>
   <p><span>文章作者:</span>AaronGod</a></p>
-  <p><span>发布时间:</span>2019年02月03日 - 11:46:46</p>
-  <p><span>最后更新:</span>2019年10月15日 - 17:10:59</p>
-  <p><span>原始链接:</span><a href="/vue-build/" title="vue如何打包上线">https://aarongod.github.io/vue-build/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://aarongod.github.io/vue-build/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年10月21日 - 12:10:30</p>
+  <p><span>最后更新:</span>2019年10月21日 - 12:29:49</p>
+  <p><span>原始链接:</span><a href="/vue项目demo/" title="vue项目demo">https://aarongod.github.io/vue项目demo/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://aarongod.github.io/vue项目demo/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
 -->
-  <p style="margin:0;"><span>发布时间:</span>2019年02月03日</p>
-  <p><span>最后更新:</span>2019年10月15日</p>
+  <p style="margin:0;"><span>发布时间:</span>2019年10月21日</p>
+  <p><span>最后更新:</span>2019年10月21日</p>
 </div>
 
 <!--
@@ -478,7 +517,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://aarongod.github.io/vue-build/" title="vue如何打包上线">https://aarongod.github.io/vue-build/</a>
+    <a href="https://aarongod.github.io/vue项目demo/" title="vue项目demo">https://aarongod.github.io/vue项目demo/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -505,8 +544,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/php-config/" rel="next" title="php-config">
-                <i class="fa fa-chevron-left"></i> php-config
+              <a href="/wordpress-update/" rel="next" title="wordpress升级">
+                <i class="fa fa-chevron-left"></i> wordpress升级
               </a>
             
           </div>
@@ -514,10 +553,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/wordpress-update/" rel="prev" title="wordpress升级">
-                wordpress升级 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -574,8 +609,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -647,6 +691,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-项目记录"><span class="nav-number">1.</span> <span class="nav-text">vue 项目记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-的目录结构"><span class="nav-number">1.1.</span> <span class="nav-text">vue 的目录结构</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
