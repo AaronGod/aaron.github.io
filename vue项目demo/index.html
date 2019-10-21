@@ -91,18 +91,18 @@
   </script>
 
 
-<meta name="description" content="vue 项目记录对 vue 项目初识的一个记录， 以后直接按照这里的步骤建立 vue 项目了。 vue 的目录结构   目录/文件 说明     build 这个是我们最终发布的时候会把代码发布在这里，在开发阶段，我们基本不用管。   config 配置目录，默认配置没有问题，所以我们也不用管   node_modules 这个目录是存放我们项目开发依赖的一些模块，这里面有很多很多内容，不过高兴的">
+<meta name="description" content="记录一个vue项目的步骤，目录等..">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目demo">
 <meta property="og:url" content="https://aarongod.github.io/vue项目demo/index.html">
 <meta property="og:site_name" content="Aaron|Blog">
-<meta property="og:description" content="vue 项目记录对 vue 项目初识的一个记录， 以后直接按照这里的步骤建立 vue 项目了。 vue 的目录结构   目录/文件 说明     build 这个是我们最终发布的时候会把代码发布在这里，在开发阶段，我们基本不用管。   config 配置目录，默认配置没有问题，所以我们也不用管   node_modules 这个目录是存放我们项目开发依赖的一些模块，这里面有很多很多内容，不过高兴的">
+<meta property="og:description" content="记录一个vue项目的步骤，目录等..">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-21T04:29:49.827Z">
+<meta property="og:updated_time" content="2019-10-21T06:30:39.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue项目demo">
-<meta name="twitter:description" content="vue 项目记录对 vue 项目初识的一个记录， 以后直接按照这里的步骤建立 vue 项目了。 vue 的目录结构   目录/文件 说明     build 这个是我们最终发布的时候会把代码发布在这里，在开发阶段，我们基本不用管。   config 配置目录，默认配置没有问题，所以我们也不用管   node_modules 这个目录是存放我们项目开发依赖的一些模块，这里面有很多很多内容，不过高兴的">
+<meta name="twitter:description" content="记录一个vue项目的步骤，目录等..">
 
 
 
@@ -359,7 +359,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  333
+                  718
                 </span>
               
 
@@ -375,12 +375,16 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
           
 
+          
+              <div class="post-description">
+                  记录一个vue项目的步骤，目录等..
+              </div>
           
 
         </div>
@@ -447,6 +451,40 @@
 </tr>
 </tbody>
 </table>
+<h3 id="SRC-文件夹的情况"><a href="#SRC-文件夹的情况" class="headerlink" title="SRC 文件夹的情况"></a>SRC 文件夹的情况</h3><p>如上图所示，这是 src 文件夹下面的初始情况，里面有一些示例代码之类的。<br>比如，它吧 logo 放在<code>assets</code>文件夹里面。我个人很不喜欢这么做，因为代码是代码，资源是资源，各归其位比较好。</p>
+<p><code>commponents</code>目录里面放了一个演示的组件文件，你可以打开看下。当然，也可以直接删除，然后根据我的博文往下走。<br><code>App.vue</code>是项目入口文件。当然，我们需要改造，改造成我们可以使用的样子的。后面的博文会说。<br><code>main.js</code>这是项目的核心文件。全局的配置都在这个文件里面配置，我后面会详细的讲这里怎么搞。</p>
+<h3 id="整理目录"><a href="#整理目录" class="headerlink" title="整理目录"></a>整理目录</h3><p><a href="https://user-gold-cdn.xitu.io/2019/3/15/169804e5e5725f10?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" title="src目录" target="_blank" rel="noopener">src 目录</a></p>
+<p>如上图所示，把文件夹和文件都新建好，后面的博文我会详细给出每个文件的代码的。这里，都新建空文件即可。注意，我是用 scss 来写 css 文件的。所以看官你最好也学习一下 scss 的相关内容，我的博客里面有，搜索也是一大把。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">目录/文件</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">component</td>
+<td style="text-align:left">组件文件我们写的一些公用的内容可以放在这里的</td>
+</tr>
+<tr>
+<td style="text-align:left">config</td>
+<td style="text-align:left">核心配置文件夹</td>
+</tr>
+<tr>
+<td style="text-align:left">frame</td>
+<td style="text-align:left">存放子路由的文件夹</td>
+</tr>
+<tr>
+<td style="text-align:left">page</td>
+<td style="text-align:left">项目模板文件夹，所有的页面文件全部存放在此地，后面会根据需要来建立各种子目录</td>
+</tr>
+<tr>
+<td style="text-align:left">style</td>
+<td style="text-align:left">样式存放目录</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -473,7 +511,7 @@
   <p><span>本文标题:</span>vue项目demo</a></p>
   <p><span>文章作者:</span>AaronGod</a></p>
   <p><span>发布时间:</span>2019年10月21日 - 12:10:30</p>
-  <p><span>最后更新:</span>2019年10月21日 - 12:29:49</p>
+  <p><span>最后更新:</span>2019年10月21日 - 14:30:39</p>
   <p><span>原始链接:</span><a href="/vue项目demo/" title="vue项目demo">https://aarongod.github.io/vue项目demo/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://aarongod.github.io/vue项目demo/"  aria-label="复制成功！"></i></span>
   </p>
@@ -701,7 +739,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-项目记录"><span class="nav-number">1.</span> <span class="nav-text">vue 项目记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-的目录结构"><span class="nav-number">1.1.</span> <span class="nav-text">vue 的目录结构</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue-项目记录"><span class="nav-number">1.</span> <span class="nav-text">vue 项目记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-的目录结构"><span class="nav-number">1.1.</span> <span class="nav-text">vue 的目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SRC-文件夹的情况"><span class="nav-number">1.1.1.</span> <span class="nav-text">SRC 文件夹的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整理目录"><span class="nav-number">1.1.2.</span> <span class="nav-text">整理目录</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -735,7 +773,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">21k</span>
+    <span title="Site words total count">21.4k</span>
   
 </div>
 
